@@ -1,0 +1,65 @@
+{
+  "name": "kickstart-js",
+  "version": "1.0.0",
+  "description": "minmal starter for javascript based projects",
+  "main": "index.js",
+  "repository": "https://github.com/Pushplaybang/kickstart-js",
+  "author": "pushplaybang <pushplaybang@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack --mode development --module-bind js=babel-loader"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "dotenv": "^6.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "flow-bin": "^0.76.0",
+    "jest": "^23.4.1",
+    "prettier": "^1.13.7",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "last 4 versions",
+              "safari >= 7"
+            ],
+            "node": "8.11.3"
+          }
+        }
+      ],
+      [
+        "stage-2"
+      ],
+      [
+        "react"
+      ],
+      [
+        "flow"
+      ]
+    ]
+  }
+}
