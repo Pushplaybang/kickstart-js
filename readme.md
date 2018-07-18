@@ -6,6 +6,7 @@ Minimal modern starter for client and server JS projects. Including common depen
 - Prettier: Code formatting
 - babel: Transpile from es6+ (stage 2)
 - Webpack: Build and bundle
+- SCSS: for working with styles
 - Jest: Testing framework
 - dotenv: use .env files for environmental config
 - git: Source control, basic setup
@@ -20,11 +21,13 @@ Starting a JS project with a full setup takes a lot of grunt work. Many boiler-p
 
 The following will get you going.
 
-- Download the zip folder, and unzip this into your project directory.
-- run `yarn install` (or `npm install` if you prefer)
-- create a `dev.env` and a `prod.env` files. These should be backed up securely, as they are ignored in git.
-- implement the `start` script in `package.json`
-- build great things for fun and profit.
+1.  Download the zip folder, and unzip this into your project directory.
+2.  run `yarn install` (or `npm install` if you prefer)
+3.  setup your editor or IDE to use eslint and prettier if necessary
+4.  create a `dev.env` and a `prod.env` files. These should be backed up securely, as they are ignored in git.
+5.  implement the `start` script in `package.json`
+6.  Customize and extend to your preferences
+7.  build great things for fun and profit.
 
 ## Scripts
 
@@ -35,6 +38,7 @@ a minimal set of scripts have been included in the `package.json` file to get yo
 - test:watch - run tests in watch mode, rerunning on file change
 - build:dev - runs webpack with hte `webpack.dev.js` config
 - build:prod - runs webpack with hte `webpack.prod.js` config
+- lint - runs eslint on the src directory
 - serve:coverage - serves the html coverage report from jest on `http://localhost:7357`
 
 ## Webpack
@@ -54,6 +58,8 @@ COMING SOON.
 COMING SOON.
 
 ---
+
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 Copyright 2018 Paul van Zyl
 
