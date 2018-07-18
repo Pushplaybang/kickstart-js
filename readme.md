@@ -36,8 +36,8 @@ a minimal set of scripts have been included in the `package.json` file to get yo
 - start - not implemented, you will need to set this for the kind of project you're building
 - test - kicks off the jest test runner, which expects files like `[name].test.js` in the `./tests` folder
 - test:watch - run tests in watch mode, rerunning on file change
-- build:dev - runs webpack with hte `webpack.dev.js` config
-- build:prod - runs webpack with hte `webpack.prod.js` config
+- build:dev - runs webpack with the `webpack.dev.js` config
+- build:prod - runs webpack with the `webpack.prod.js` config
 - lint - runs eslint on the src directory
 - serve:coverage - serves the html coverage report from jest on `http://localhost:7357`
 
