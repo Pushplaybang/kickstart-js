@@ -7,8 +7,12 @@
   "author": "pushplaybang <pushplaybang@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:dev": "webpack --mode development",
-    "build:prod": "webpack --mode production"
+    "test": "jest ./tests",
+    "test:watch": "jest --watchAll --coverage --notify",
+    "start": "echo \"No start command defined, set this up for your project\"",
+    "build:dev": "webpack --config webpack.dev.js",
+    "build:prod": "webpack --config webpack.prod.js",
+    "serve:coverage": "http-server ./coverage/lcov-report -p 7357"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.0",
@@ -20,14 +24,18 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "dotenv": "^6.0.0",
+    "dotenv-webpack": "^1.5.7",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-airbnb-standard": "^2.1.6",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.18.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
@@ -35,6 +43,7 @@
     "flow-bin": "^0.76.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
     "jest": "^23.4.1",
     "node-sass": "^4.9.2",
     "postcss-scss": "^2.0.0",
@@ -42,9 +51,9 @@
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.1",
-    "webpack-auto-clean-build-plugin": "^1.0.4",
     "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-merge": "^4.1.3",
+    "webpack-serve": "^2.0.2"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0"
