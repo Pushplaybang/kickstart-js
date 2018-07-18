@@ -1,2 +1,2 @@
 // @flow
-console.log('file loaded!');
+console.log("file loaded!");
