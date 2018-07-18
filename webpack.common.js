@@ -2,20 +2,20 @@
  * Basic Webpack config
  */
 
-/* eslint-disable */
-const clean = require("clean-webpack-plugin");
-const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const postCSS = require("postcss-scss");
-const autoPrefixer = require("autoprefixer");
+/* eslint-disable import/no-extraneous-dependencies */
+const clean = require('clean-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const postCSS = require('postcss-scss');
+const autoPrefixer = require('autoprefixer');
 
-const cleanPlugin = new clean(["dist"]);
+const cleanPlugin = new clean(['dist']);
 const errorsPlugin = new FriendlyErrorsWebpackPlugin();
 const copyPlugin = new CopyWebpackPlugin([
   {
-    from: "./src/public/",
-    to: "public/"
-  }
+    from: './src/public/',
+    to: 'public/',
+  },
 ]);
 
 module.exports = {
@@ -25,41 +25,36 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.s?css$/,
         use: [
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               sourceMap: true,
-              minimize: true
-            }
+              minimize: true,
+            },
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               parser: postCSS,
-              sourceMap: "inline",
+              sourceMap: 'inline',
               plugins: () => [
-                autoPrefixer([
-                  "defaults",
-                  "last 2 versions",
-                  "android 4",
-                  "not ie < 11"
-                ]) // breaks source maps if not inline
-              ]
-            }
+                autoPrefixer(['defaults', 'last 2 versions', 'android 4', 'not ie < 11']), // breaks source maps if not inline
+              ],
+            },
           },
           {
-            loader: "sass-loader",
-            options: { sourceMap: true }
-          }
-        ]
-      }
-    ]
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          },
+        ],
+      },
+    ],
   },
-  plugins: [cleanPlugin, copyPlugin, errorsPlugin]
+  plugins: [cleanPlugin, copyPlugin, errorsPlugin],
 };
