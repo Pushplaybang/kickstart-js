@@ -12,6 +12,7 @@
     "start": "echo \"No start command defined, set this up for your project\"",
     "build:dev": "webpack --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
+    "lint": "eslint \"src/**\"",
     "serve:coverage": "http-server ./coverage/lcov-report -p 7357"
   },
   "devDependencies": {
