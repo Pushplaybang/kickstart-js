@@ -21,7 +21,6 @@ test('should test async multiply function', (done) => {
 // using 'done'
 test('should test async multiply function error with no arg', (done) => {
   const multiply = multiplyAsync();
-
   multiply.catch((error) => {
     expect(error).toEqual(new Error('a single arg of type number is required'));
     done();
