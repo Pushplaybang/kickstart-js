@@ -10,18 +10,18 @@ test('should test sync multiply function', () => {
   expect(answer).toBe(4);
 });
 
-test('should test async multiply function', (done) => {
+test('should test async multiply function', done => {
   const multiply = multiplyAsync(2);
-  multiply.then((answer) => {
+  multiply.then(answer => {
     expect(answer).toBe(4);
     done();
   });
 });
 
 // using 'done'
-test('should test async multiply function error with no arg', (done) => {
+test('should test async multiply function error with no arg', done => {
   const multiply = multiplyAsync();
-  multiply.catch((error) => {
+  multiply.catch(error => {
     expect(error).toEqual(new Error('a single arg of type number is required'));
     done();
   });
@@ -29,5 +29,7 @@ test('should test async multiply function error with no arg', (done) => {
 
 // using async
 test('should test async multiply function error with incorrect arg type', async () => {
-  await expect(multiplyAsync('potato')).rejects.toThrow('a single arg of type number is required');
+  await expect(multiplyAsync('potato')).rejects.toThrow(
+    'a single arg of type number is required',
+  );
 });

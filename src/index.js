@@ -10,12 +10,13 @@
 export const multiplySync = x => x * x;
 
 // example async function
-export const multiplyAsync = x => new Promise((resolve, reject) => {
-  setTimeout(() => {
-    if (!x || typeof x !== 'number') {
-      return reject(new Error('a single arg of type number is required'));
-    }
+export const multiplyAsync = x =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (!x || typeof x !== 'number') {
+        return reject(new Error('a single arg of type number is required'));
+      }
 
-    return resolve(x * x);
-  }, 1000);
-});
+      return resolve(x * x);
+    }, 1000);
+  });

@@ -13,56 +13,43 @@
     "build:dev": "webpack --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
     "lint": "eslint \"src/**\"",
-    "serve:coverage": "http-server ./coverage/lcov-report -p 7357"
+    "serve:coverage": "http-server ./coverage/lcov-report -p 7357",
+    "update:packages": " rm -rf node_modules && rm package-lock.json && npm install && npm update --all && npm outdated "
   },
   "devDependencies": {
-    "autoprefixer": "^9.0.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.19",
-    "copy-webpack-plugin": "^4.5.2",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "autoprefixer": "^9.4.7",
+    "babel-loader": ">= 8",
+    "clean-webpack-plugin": ">= 1.0.1",
+    "copy-webpack-plugin": "^4.6.0",
     "cross-env": "^5.2.0",
-    "css-loader": "^1.0.0",
-    "dotenv": "^6.0.0",
-    "dotenv-webpack": "^1.5.7",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-airbnb-standard": "^2.1.6",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jest": "^21.18.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-prettier": "^2.6.2",
-    "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "flow-bin": "^0.76.0",
+    "css-loader": ">= 2",
+    "dotenv": "^6.2.0",
+    "dotenv-webpack": "^1.7.0",
+    "eslint": ">= 5",
+    "flow-bin": ">= 0.91",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
-    "jest": "^23.4.1",
-    "node-sass": "^4.9.2",
-    "postcss-scss": "^2.0.0",
-    "prettier": "^1.13.7",
-    "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.16.1",
-    "webpack-cli": "^3.0.8",
-    "webpack-merge": "^4.1.3",
-    "webpack-serve": "^2.0.2"
+    "jest": ">= 24",
+    "node-sass": ">= 4",
+    "postcss-scss": ">= 2",
+    "prettier": ">= 1.16.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": ">= 0.23",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-merge": "^4.2.1",
+    "webpack-serve": "^2.0.3"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "@babel/polyfill": "^7.0.0"
   },
   "babel": {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "targets": {
             "browsers": [
@@ -71,18 +58,35 @@
               "safari >= 7"
             ],
             "node": "8.11.3"
-          }
+          },
+          "useBuiltIns": "usage"
         }
       ],
       [
-        "stage-2"
+        "@babel/preset-react"
       ],
       [
-        "react"
+        "@babel/preset-flow"
       ],
       [
-        "flow"
+        "minify"
       ]
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-syntax-import-meta",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-json-strings",
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ],
+      "@babel/plugin-proposal-function-sent",
+      "@babel/plugin-proposal-export-namespace-from",
+      "@babel/plugin-proposal-numeric-separator",
+      "@babel/plugin-proposal-throw-expressions"
     ]
   }
 }
