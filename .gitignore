@@ -10,3 +10,7 @@ dist/**/*
 *.env
 /package-lock.json
 /yarn.lock
+/.eslintrc.json
+/.stylelintrc
+/.babelrc
+/.prettierrc.js
