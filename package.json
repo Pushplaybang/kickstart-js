@@ -8,13 +8,13 @@
   "license": "MIT",
   "scripts": {
     "test": "jest ./tests",
-    "test:watch": "jest --watchAll --coverage --notify",
+    "test:watch": "jest ./tests --watchAll --coverage --notify",
     "start": "echo \"No start command defined, set this up for your project\"",
     "build:dev": "webpack --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
     "lint": "eslint \"src/**\"",
     "serve:coverage": "http-server ./coverage/lcov-report -p 7357",
-    "update:packages": " rm -rf node_modules && rm package-lock.json && npm install && npm update --all && npm outdated "
+    "update:packages": "rm -rf node_modules && rm package-lock.json && npm install && npm update --all && npm outdated"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
